@@ -11,13 +11,15 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()  # initialize the pygame library
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))  # create a window
+    clock = pygame.time.Clock()  # create a clock object to control the frame rate
+    dt = 0  # delta time, the time since the last frame
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         pygame.Surface.fill(screen, (0, 0, 0))
         pygame.display.flip()  # update the display
-        
+        clock.tick(60)
 
 
 if __name__ == "__main__":
