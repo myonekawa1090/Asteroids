@@ -33,6 +33,9 @@ def main():
         player.update(dt)  # update the player
         updatables.update(dt)
         for drawable in drawables:
+            if player.check_collision(drawable):
+                print("Game Over!")
+                return 
             drawable.draw(screen)
         pygame.display.flip()  # update the display
         dt = clock.tick(60) / 1000  # limit the frame rate to 60 FPS
