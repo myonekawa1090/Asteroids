@@ -44,7 +44,7 @@ def main():
             drawable.draw(screen)
         for asteroid in asteroids:
             if player.check_collision(asteroid):
-                print("Game Over!")
+                print("Game Over!!")
                 return
             for shot in shots:  
                 if shot.check_collision(asteroid):
